@@ -29,7 +29,9 @@ site/
 
 # --- Generated outputs (regenerable; keep the repo lean) ------------------- #
 cache/
-results/
+# The challenge predictions are kept in the repo; other results are regenerable.
+results/*
+!results/predictions_81.csv
 figures/*.pdf
 figures/*.png
 

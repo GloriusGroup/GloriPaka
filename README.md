@@ -133,6 +133,10 @@ Reproduce the challenge predictions and score the held-out proxy from the comman
 gloripaka reproduce
 ```
 
+The predictions for all 81 challenge VHH are provided in
+[`results/predictions_81.csv`](results/predictions_81.csv): predicted HIC (minutes), the
+underlying rank, nearest-neighbour identity to the training data, and a confidence tier.
+
 ## Package layout
 
 | Module | Purpose |

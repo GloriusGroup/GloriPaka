@@ -211,15 +211,22 @@ class GloriPakaPredictor:
     def _confidence(self, index: pd.Index, sequences: pd.Series) -> pd.DataFrame:
         """Attach nearest-neighbour identity and a confidence tier per row."""
         pool = self._load_pool()
+        known_names: set[str] = set()
+        known_seqs: list[str] = []
         try:
-            known_names = set(known_test_labels()["Name"])
+            known = known_test_labels()
+            known_names = set(known["Name"])
+            known_seqs = [_clean_seq(s) for s in known["sequence"]]
         except Exception:  # pragma: no cover - harvest data optional
-            known_names = set()
-        train = pool.sequences
+            pass
+        # Reference set = native training pool + the public-label VHH (in-domain ARRAS
+        # references). Those labels are used only for this post-hoc confidence
+        # annotation, never for training or prediction.
+        train = [t for t in (pool.sequences + known_seqs) if t]
         rows = []
         for name in index:
             seq = _clean_seq(sequences.get(name, ""))
-            nn = max((sequence_identity(seq, t) for t in train if t), default=0.0)
+            nn = max((sequence_identity(seq, t) for t in train), default=0.0)
             rows.append(
                 {
                     "nn_identity_to_train": round(float(nn), 3),
