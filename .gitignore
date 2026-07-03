@@ -29,19 +29,19 @@ site/
 
 # --- Generated outputs (regenerable; keep the repo lean) ------------------- #
 cache/
+results/
 figures/*.pdf
 figures/*.png
 
 # --- Data (NOT redistributed here) ----------------------------------------- #
-# Third-party datasets are cited, not published. The Ginkgo / PROPHET-Ab (GDPa)
-# datapoints in particular must never be committed or placed on Zenodo. Data is
-# fetched locally (see data/README.md); nothing under data/ is tracked except the
-# data-availability README and a curated, license-clear examples folder.
+# Third-party datasets are cited, not published; the Ginkgo / PROPHET-Ab (GDPa)
+# datapoints in particular must never be committed. Data is fetched locally (see
+# data/README.md); nothing under data/ is tracked except the data-availability
+# README and a curated, license-clear examples folder.
 data/*
 !data/README.md
 !data/examples/
 data/examples/**/*.pdb
-data/zenodo/
 
 # --- Secrets / API keys / credentials — NEVER commit ----------------------- #
 *.pem

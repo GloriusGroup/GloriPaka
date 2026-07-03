@@ -32,13 +32,13 @@ and in `docs/datasets.md`:
 ## Third-party data is cited, not redistributed
 
 Third-party HIC datasets remain the property of their originators and are governed by
-their own licenses. This repository and any associated Zenodo deposit **cite** these
-datasets and record how to obtain them; they do **not** redistribute third-party HIC
-measurements. Only data the project generated itself and that is license-clear (predicted
-structures, derived feature tables) may be shared via Zenodo.
+their own licenses. This repository **cites** these datasets and records how to obtain
+them; it does **not** redistribute third-party HIC measurements. Data the project
+generated itself (predicted structures, derived feature tables) is not stored here either,
+because it regenerates deterministically from sequence.
 
 **Ginkgo / PROPHET-Ab data (GDPa1, GDPa2, GDPa3, GDPa4) is NOT included** in this
-repository or in any associated Zenodo deposit. To reproduce the World-1 mAb pool and the
+repository. To reproduce the World-1 mAb pool and the
 GDPa2 portion of the native-VHH pool, obtain it directly from Ginkgo Datapoints. Any
 GDPa2-derived rows present in a working copy of `hic_harvest/hic_records_vhh.csv` are
 cite-only provenance records to be regenerated from the Ginkgo source, not a redistributed

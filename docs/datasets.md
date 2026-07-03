@@ -155,7 +155,7 @@ Fc-fusion production and developability profiling including analytical HIC.
   enables the rapid identification of de novo humanized and sequence-optimized single
   domain antibodies: a prospective case study." *Front. Mol. Biosci.* 10:1249247 (28 Sep
   2023). **DOI: 10.3389/fmolb.2023.1249247.**
-- **Paper 2 (library approach; further ~42 VHH not yet mined into the pool).** Arras P,
+- **Paper 2 (library approach; further ~42 VHH not mined into the pool).** Arras P,
   Yoo HB, Pekar L, Schröter C, Clarke T, Krah S, Klewinghaus D, Siegmund V, Evers A,
   Zielonka S. "A library approach for the de novo high-throughput isolation of humanized
   VHH domains with favorable developability properties following camelid immunization."
@@ -164,7 +164,7 @@ Fc-fusion production and developability profiling including analytical HIC.
 - **What it measures / N.** Paper 1 Table 4 gives **37 VHH with HIC** (IDs 1-37, range
   4.7-6.7 min); these are the `arras2023_frontiers` rows in the harvest (37 records).
   Paper 2 Table 3 gives a further **42 VHH with HIC** (range 4.5-7.3 min) that are largely
-  non-redundant but **not yet incorporated** into the assembled pool (they require SI
+  non-redundant but **not incorporated** into the assembled pool (they require SI
   Table S4 for full WT/VGLW sequences). Together the two papers hold ~79 VHH on the ARRAS
   assay.
 - **Molecule type.** VHH, assayed as one-armed VHH-SEEDbody Fc fusions.
@@ -513,15 +513,14 @@ to rescale raw values into the model.
 
 **Third-party datasets are cited, not redistributed.** GloriPaka builds on public
 datasets that remain the property of their originators and are governed by their own
-licenses. This repository and any associated Zenodo deposit do not redistribute
-third-party HIC measurements; they record provenance and give instructions to obtain each
-dataset from its original source. Only data that the project generated itself and that is
-license-clear (for example predicted structures and derived feature tables computed by the
-project's own pipeline) may be shared via Zenodo.
+licenses. This repository does not redistribute third-party HIC measurements; it records
+provenance and gives instructions to obtain each dataset from its original source. Data
+the project generated itself (predicted structures and derived feature tables) is not
+stored here either, because it regenerates deterministically from sequence.
 
 **Ginkgo / PROPHET-Ab data specifically (GDPa1, GDPa2, GDPa3, GDPa4).** The Ginkgo
-Datapoints / PROPHET-Ab measurements are **NOT included in this repository or in any
-associated Zenodo deposit.** To reproduce the World-1 mAb pool and the GDPa2 portion of
+Datapoints / PROPHET-Ab measurements are **NOT included in this repository.** To
+reproduce the World-1 mAb pool and the GDPa2 portion of
 the native-VHH pool, obtain them directly from Ginkgo:
 
 - GDPa1: `github.com/ginkgobioworks/abdev-benchmark` (non-gated) or
@@ -551,7 +550,7 @@ count as recorded in the project's assembled files / notes.
 |:--|:--:|:--|:--:|:--|:--|:--|:--|
 | Official test set (81 VHH) | 2 | VHH | 81 seq (34 labels public) | target = ARRAS TSKgel Butyl-NPR + 50% MeOH | Merck challenge; provenance Arras 2023 | provided by challenge | input (seqs only) |
 | Arras 2023 (Frontiers) | 2 | VHH | 37 | TSKgel Butyl-NPR; 1.2 M AS/PBS to 50% MeOH; 15 min; UV 214 | Arras 2023, *Front. Mol. Biosci.* 10:1249247 (10.3389/fmolb.2023.1249247) | Table 4 + framework reconstruction | cite-only |
-| Arras 2023 (library, mAbs) | 2 | VHH | 42 (not yet merged) | same as above | Arras 2023, *mAbs* 15(1):2261149 (10.1080/19420862.2023.2261149) | Table 3 + SI Table S4 | cite-only |
+| Arras 2023 (library, mAbs) | 2 | VHH | 42 (not merged) | same as above | Arras 2023, *mAbs* 15(1):2261149 (10.1080/19420862.2023.2261149) | Table 3 + SI Table S4 | cite-only |
 | Siegmund 2025 | 2 | VHH | 3 (of 15) | identical to Arras assay | Siegmund 2025, *mAbs* 17(1):2553622 (10.1080/19420862.2025.2553622) | SI Fig S1 (seq) + Table S1 (HIC) | cite-only |
 | Gordon 2026 / TNP | 1 | VHH | 36 (of 108) | Sepax HTC Butyl-NP5; 1.8 M AS to phosphate pH 6.5; 20 min; UV 280 | Gordon 2026, *Commun. Biol.* 9:344 (10.1038/s42003-026-09594-y) | join of two `oxpig/TNP` repo CSVs | cite-only |
 | GDPa2 (Ginkgo) | 1 | VHH | 17 (51 rows) | PROPHET-Ab HIC (Sepax Butyl-NP5 family), 4.5-min class, n=1 | Ginkgo portal / PROPHET-Ab platform (Arsiwala 2025); own DOI (verify) | Ginkgo Datapoints portal | cite-only (NOT shipped) |
@@ -564,5 +563,6 @@ count as recorded in the project's assembled files / notes.
 | Rauschmayer 2026 | (other) | VHH/sdAb | 5 (candidate) | Thermo mAbPac HIC-10 | Rauschmayer 2026, *JBC* 302(7):113155 (10.1016/j.jbc.2026.113155) | article + SI (candidate, not merged) | cite-only |
 
 Data the project generated itself (predicted NanoBodyBuilder2 structures, computed
-feature tables, rank-normalization outputs) is license-clear and may be shared via Zenodo;
-it is derived from, but does not reproduce, any third-party HIC measurement.
+feature tables, rank-normalization outputs) regenerates deterministically from sequence,
+so it is not stored here; it is derived from, but does not reproduce, any third-party HIC
+measurement.

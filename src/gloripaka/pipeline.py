@@ -14,7 +14,7 @@ Two entry points are provided:
   features. This is fully self-contained and needs only the core dependencies.
 * :meth:`GloriPakaPredictor.predict` starts from raw sequences. It requires the
   optional ``featurize`` extra (structure prediction and biophysical featurization)
-  and raises an informative error until that stack is installed.
+  and raises an informative error if that stack is not installed.
 
 No test labels are used to fit anything; the held-out labels are only ever read to
 score predictions after the fact.
@@ -194,8 +194,8 @@ class GloriPakaPredictor:
             raise RuntimeError(
                 "Predicting from raw sequences needs the featurization stack "
                 "(NanoBodyBuilder2, FreeSASA, ANARCI, DeepSP). Install it with "
-                "`uv sync --extra featurize`. Until the featurize module is available "
-                "you can call `predict_from_features` on a precomputed feature table."
+                "`uv sync --extra featurize`. Alternatively, call "
+                "`predict_from_features` on a precomputed feature table."
             ) from exc
         seqs = [_clean_seq(s) for s in sequences]
         features = featurize_sequences(seqs)

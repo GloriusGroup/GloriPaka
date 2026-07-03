@@ -11,8 +11,7 @@
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.11%2B-blue.svg" alt="Python 3.11+"></a>
   <a href="https://docs.astral.sh/uv/"><img src="https://img.shields.io/badge/env-uv-6340ac.svg" alt="uv"></a>
   <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/badge/style-ruff%20(google)-blueviolet.svg" alt="Code style: Ruff / Google"></a>
-  <a href="https://GloriusGroup.github.io/GloriPaka/"><img src="https://img.shields.io/badge/docs-mkdocs-blue.svg" alt="Docs"></a>
-  <a href="tests/"><img src="https://img.shields.io/badge/tests-pytest-blue.svg" alt="Tests"></a>
+  <a href="docs/datasets.md"><img src="https://img.shields.io/badge/docs-datasets-blue.svg" alt="Docs"></a>
 </p>
 
 ---
@@ -26,7 +25,6 @@
 - [Package layout](#package-layout)
 - [Data and reproducibility](#data-and-reproducibility)
 - [Scientific background](#scientific-background)
-- [Roadmap](#roadmap)
 - [Citation](#citation)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -117,16 +115,22 @@ score = physics_composite(features)       # equal-weight rank composite, no trai
 print(compute_metrics(true_hic, score))   # Pearson, Spearman, Kendall, RMSE, ...
 ```
 
-The single-call, sequence-to-prediction interface is under construction (see the
-[roadmap](#roadmap)):
+The high-level predictor runs the full ensemble, from precomputed features or, with the
+`featurize` extra installed, directly from raw sequences:
 
 ```python
-# planned for v0.2
 from gloripaka import GloriPakaPredictor
 
 predictor = GloriPakaPredictor()
-result = predictor.predict(["QVQLVESGGGLVQPGGSLRLSCAAS..."])
-print(result[["sequence_id", "predicted_hic", "confidence"]])
+predictions = predictor.predict_from_features(features)   # from precomputed features
+# predictions = predictor.predict(sequences)              # from sequence (uv sync --extra featurize)
+print(predictions[["predicted_hic", "confidence"]])
+```
+
+Reproduce the challenge predictions and score the held-out proxy from the command line:
+
+```bash
+gloripaka reproduce
 ```
 
 ## Package layout
@@ -143,8 +147,7 @@ print(result[["sequence_id", "predicted_hic", "confidence"]])
 | `gloripaka.report` | Lightweight experiment reporting to CSV and markdown. |
 | `gloripaka.secrets` | Out-of-repo access to the optional TabPFN API token. |
 | `gloripaka.viz` | A single central publication figure style. |
-| `gloripaka.featurize` (v0.2) | Sequence to structure to biophysical features. |
-| `gloripaka.pipeline` (v0.2) | The high-level `GloriPakaPredictor`. |
+| `gloripaka.pipeline` | The high-level `GloriPakaPredictor` (sequence or features to HIC). |
 
 ## Data and reproducibility
 
@@ -154,27 +157,23 @@ FreeSASA, and DeepSP; ESM2 is a separate `esm` extra), each of which downloads i
 model weights from its original source at first use. This keeps the repository free of
 third-party model files while staying fully reproducible.
 
-Third-party datasets are cited, not redistributed. In particular, the Ginkgo /
-PROPHET-Ab (GDPa) measurements are not published in this repository or on Zenodo; the
-documentation records their provenance and how to obtain them from the original source.
-Any large, license-clear artifacts we generated ourselves (for example predicted
-structures) are hosted on Zenodo and fetched with a helper script. See `data/README.md`
-for the full data-availability statement and fetch instructions.
+Predicted structures and feature tables are not shipped because they are deterministic:
+NanoBodyBuilder2 is a feed-forward predictor and GloriPaka uses its unrefined output, so
+the same sequence regenerates the same structure and the same features on any machine.
+Nothing beyond the sequences needs to be hosted or downloaded.
+
+Third-party datasets are cited, not redistributed. The Ginkgo / PROPHET-Ab (GDPa)
+measurements in particular are not included here; `data/README.md` and `docs/datasets.md`
+record their provenance and how to obtain them from the original source.
 
 ## Scientific background
 
 The full experimental record, including negative results, is kept in the research lab
-journal (`notes/lab_journal.md` in the source workspace) and is being curated into the
+journal (`notes/lab_journal.md` in the source workspace) and summarized in the
 documentation here. In brief: training on native VHH data improves on mAb-only training;
 transferable surface hydrophobicity is the signal that generalizes; the physics-plus-ML
 ensemble improves on either component alone; and the main limitation is the quantity of
 data available on a shared assay rather than the modelling method.
-
-## Roadmap
-
-GloriPaka is built minimal-first and then expanded. See [ROADMAP.md](ROADMAP.md) for the
-phased plan covering the pipeline, the data and Zenodo bundle, documentation, tests, and
-continuous integration.
 
 ## Citation
 

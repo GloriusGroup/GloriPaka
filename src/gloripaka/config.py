@@ -3,8 +3,9 @@
 Everything a script might otherwise hard-code as a string literal lives here, so
 paths and conventions are defined once and imported everywhere. Unlike a research
 scratch workspace, this package is **self-contained**: every path resolves relative
-to the installed repository root, so a fresh ``git clone`` (plus the data bundle from
-Zenodo, see ``README.md``) is fully runnable with no reference to any external tree.
+to the installed repository root, so a fresh ``git clone`` (plus the datasets obtained
+from their original sources, see ``README.md``) is fully runnable with no reference to
+any external tree.
 
 Typical use:
     >>> from gloripaka.config import PATHS, FEATURE_GROUPS

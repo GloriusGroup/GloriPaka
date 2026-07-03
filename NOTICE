@@ -36,7 +36,7 @@ Each retains its own license. See the documentation for full citations.
 Data availability
 -----------------
 Third-party datasets are cited, not redistributed. The Ginkgo / PROPHET-Ab
-(GDPa) measurements in particular are NOT included in this repository or in any
-associated Zenodo deposit; the documentation records their provenance and how to
-obtain them from the original source. Only data we generated ourselves, and that
-is license-clear, may be shared via Zenodo.
+(GDPa) measurements in particular are NOT included in this repository; the
+documentation records their provenance and how to obtain them from the original
+source. Predicted structures and feature tables are not stored here either: they
+regenerate deterministically from sequence (see the documentation).
