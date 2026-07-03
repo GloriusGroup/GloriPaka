@@ -12,8 +12,18 @@ license: MIT
 repository-code: "https://github.com/GloriusGroup/GloriPaka"
 authors:
   - family-names: Boser
-    given-names: Florian
-  - name: "Glorius Group, University of Münster"
+    given-names: "F. M."
+    affiliation: "Organisch-Chemisches-Institut, Universität Münster"
+  - family-names: Dobberstein
+    given-names: "N. D."
+    affiliation: "Organisch-Chemisches-Institut, Universität Münster"
+  - family-names: Niedzella
+    given-names: "M. G."
+    affiliation: "Organisch-Chemisches-Institut, Universität Münster"
+  - family-names: Spies
+    given-names: "J. C."
+    affiliation: "Organisch-Chemisches-Institut, Universität Münster"
+    email: jan.spies@uni-muenster.de
 keywords:
   - VHH
   - nanobody

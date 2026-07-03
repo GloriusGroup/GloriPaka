@@ -28,6 +28,8 @@ Design commitments (see ``README.md``):
 
 from __future__ import annotations
 
+from gloripaka.pipeline import GloriPakaPredictor
+
 __version__ = "0.1.0"
 
-__all__ = ["__version__"]
+__all__ = ["GloriPakaPredictor", "__version__"]

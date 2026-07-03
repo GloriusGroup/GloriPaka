@@ -6,8 +6,10 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [
-    { name = "Florian Boser" },
-    { name = "Glorius Group" },
+    { name = "F. M. Boser" },
+    { name = "N. D. Dobberstein" },
+    { name = "M. G. Niedzella" },
+    { name = "J. C. Spies", email = "jan.spies@uni-muenster.de" },
 ]
 keywords = [
     "antibody",
@@ -42,14 +44,28 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# Structure prediction + biophysical featurization (heavier; needed to go from a
-# raw sequence all the way to features). Kept optional so the core model/metrics
-# stay installable in minimal environments.
-featurize = [
-    "freesasa>=2.2",
-    "biopython>=1.83",
-    "anarci",
+# Structure prediction, surface analysis, and IMGT numbering. Reproduces the
+# physics composite and the structural / sequence feature families from a raw
+# sequence. All model weights are downloaded by the libraries at first use, so
+# nothing licensed is vendored.
+structure = [
+    "ImmuneBuilder>=1.1",   # NanoBodyBuilder2 structure prediction
+    "anarcii>=0.1",         # IMGT numbering (pure-Python, no HMMER)
+    "freesasa>=2.2",        # solvent-accessible surface area
+    "biopython>=1.83",      # sequence utilities and isoelectric point
+    "torch>=2.0",           # backend for ImmuneBuilder / anarcii
+    "tqdm>=4.66",
 ]
+# DeepSP SAP/SCM surface-patch features (8 of the 40 selected Ridge features).
+# DeepSP (Lai Lab, MIT) is declared and cited, not vendored: its Keras weights are
+# obtained from the original DeepSP repository. tf-keras keeps the legacy Keras-2
+# API used to load the .h5 weights while allowing a modern (Python 3.12, numpy 2) stack.
+deepsp = ["tensorflow>=2.17", "tf-keras>=2.17"]
+# ESM2 embeddings. NOT used by the shipped model; only needed to rebuild the full
+# feature table or run the ESM ablations.
+esm = ["fair-esm>=2.0", "torch>=2.0"]
+# Everything needed to featurize a raw sequence for the shipped model.
+featurize = ["gloripaka[structure,deepsp]"]
 # TabPFN is reproducible but license-gated and download-dependent; opt-in backend.
 tabpfn = ["tabpfn>=2.0"]
 # Documentation site (mkdocs-material + API autodoc).
@@ -64,6 +80,9 @@ dev = [
     "ruff>=0.6",
     "mypy>=1.11",
 ]
+
+[project.scripts]
+gloripaka = "gloripaka.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/GloriusGroup/GloriPaka"

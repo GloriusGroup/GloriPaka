@@ -19,10 +19,24 @@ Licensed under the SIL Open Font License, Version 1.1.
 Liberation Sans is metric-compatible with Arial and is bundled so figures
 render in an Arial-equivalent typeface regardless of the host system.
 
-Note
-----
-Additional third-party components used at runtime but not vendored here
-(for example NanoBodyBuilder2, FreeSASA, ANARCI, DeepSP, ESM2, and the
-scientific Python stack) retain their own licenses and are installed as
-dependencies. Any assets added later (for example vendored DeepSP model
-weights) will be recorded in this file with their license terms.
+Third-party tools (declared, not vendored)
+------------------------------------------
+The published featurization tools GloriPaka builds on are declared as optional
+dependencies and cited, not bundled. Their model weights are downloaded from the
+original sources at first use, so no third-party model files are stored here:
+
+  - NanoBodyBuilder2 (via the ImmuneBuilder package) - structure prediction
+  - ANARCI / anarcii - IMGT numbering
+  - FreeSASA - solvent-accessible surface area
+  - DeepSP (Lai Lab, MIT) - SAP/SCM surface-patch predictions
+  - ESM2 (fair-esm) - protein language-model embeddings (optional)
+
+Each retains its own license. See the documentation for full citations.
+
+Data availability
+-----------------
+Third-party datasets are cited, not redistributed. The Ginkgo / PROPHET-Ab
+(GDPa) measurements in particular are NOT included in this repository or in any
+associated Zenodo deposit; the documentation records their provenance and how to
+obtain them from the original source. Only data we generated ourselves, and that
+is license-clear, may be shared via Zenodo.

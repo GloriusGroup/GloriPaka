@@ -148,11 +148,18 @@ print(result[["sequence_id", "predicted_hic", "confidence"]])
 
 ## Data and reproducibility
 
-Small canonical inputs (challenge sequences, labels, and the feature tables the models
-consume) ship in `data/`. The larger regenerable artifacts, predicted PDB structures and
-full feature matrices, are hosted on Zenodo and fetched with a helper script to keep the
-repository small. A minimal in-repo sample supports examples and tests without a
-download. See `data/README.md` for provenance and fetch instructions.
+The featurization stack is installed, not vendored. `uv sync --extra featurize` pulls
+the published tools we build on (NanoBodyBuilder2 via ImmuneBuilder, ANARCI/anarcii,
+FreeSASA, and DeepSP; ESM2 is a separate `esm` extra), each of which downloads its own
+model weights from its original source at first use. This keeps the repository free of
+third-party model files while staying fully reproducible.
+
+Third-party datasets are cited, not redistributed. In particular, the Ginkgo /
+PROPHET-Ab (GDPa) measurements are not published in this repository or on Zenodo; the
+documentation records their provenance and how to obtain them from the original source.
+Any large, license-clear artifacts we generated ourselves (for example predicted
+structures) are hosted on Zenodo and fetched with a helper script. See `data/README.md`
+for the full data-availability statement and fetch instructions.
 
 ## Scientific background
 
@@ -176,7 +183,7 @@ If you use GloriPaka, please cite it (see [CITATION.cff](CITATION.cff)):
 ```bibtex
 @software{gloripaka2026,
   title  = {GloriPaka: sequence-based HIC-retention prediction for VHH nanobodies},
-  author = {Boser, Florian and {Glorius Group}},
+  author = {Boser, F. M. and Dobberstein, N. D. and Niedzella, M. G. and Spies, J. C.},
   year   = {2026},
   url    = {https://github.com/GloriusGroup/GloriPaka},
   note   = {Version 0.1.0}
