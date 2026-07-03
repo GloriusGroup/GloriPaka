@@ -181,8 +181,8 @@ If you use GloriPaka, please cite it (see [CITATION.cff](CITATION.cff)):
 
 ```bibtex
 @software{gloripaka2026,
-  title  = {GloriPaka: sequence-based HIC-retention prediction for VHH nanobodies},
-  author = {Boser, F. M. and Dobberstein, N. D. and Niedzella, M. G. and Spies, J. C.},
+  title  = {Sequence-based prediction of hydrophobic interaction chromatography retention for VHH single-domain antibodies: transferable surface physics beats data-hungry learning in the low-data regime},
+  author = {Boser, F. M. and Dobberstein, N. D. and Niedzella, M. G. and Spies, J. C. and Glorius, F.},
   year   = {2026},
   url    = {https://github.com/GloriusGroup/GloriPaka},
   note   = {Version 0.1.0}
@@ -190,6 +190,11 @@ If you use GloriPaka, please cite it (see [CITATION.cff](CITATION.cff)):
 ```
 
 ## Acknowledgements
+
+The authors thank K. Coersmeier for providing food and distractions, H. M. Tran and
+N. H. Hölter for giving up their seats, and F. Glorius for providing the freedom to
+participate in this challenge. We further thank Freepik (Flaticon) for the icons used in
+the logo.
 
 Developed in the Glorius Group (University of Münster). Built on open tools including
 NanoBodyBuilder2, FreeSASA, ANARCI/IMGT, DeepSP, ESM2, and scikit-learn, and on public

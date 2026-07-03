@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use GloriPaka, please cite it as below."
-title: "GloriPaka: sequence-based HIC-retention prediction for VHH nanobodies"
+title: "Sequence-based prediction of hydrophobic interaction chromatography retention for VHH single-domain antibodies: transferable surface physics beats data-hungry learning in the low-data regime"
 abstract: >-
   GloriPaka predicts hydrophobic-interaction-chromatography (HIC) retention for
   VHH single-domain antibodies (nanobodies) from sequence, via predicted 3-D
@@ -24,6 +24,9 @@ authors:
     given-names: "J. C."
     affiliation: "Organisch-Chemisches-Institut, Universität Münster"
     email: jan.spies@uni-muenster.de
+  - family-names: Glorius
+    given-names: "F."
+    affiliation: "Organisch-Chemisches-Institut, Universität Münster"
 keywords:
   - VHH
   - nanobody

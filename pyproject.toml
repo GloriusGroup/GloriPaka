@@ -10,6 +10,7 @@ authors = [
     { name = "N. D. Dobberstein" },
     { name = "M. G. Niedzella" },
     { name = "J. C. Spies", email = "jan.spies@uni-muenster.de" },
+    { name = "F. Glorius" },
 ]
 keywords = [
     "antibody",
