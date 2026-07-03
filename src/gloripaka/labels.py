@@ -9,7 +9,7 @@ module is the single source of truth for:
   * the GDPa1 mAb training labels + predefined CV folds.
 
 Keeping the join logic here (not in experiment scripts) guarantees every experiment
-uses the exact same definition of "known" — no accidental drift into leakage.
+uses the exact same definition of "known" - no accidental drift into leakage.
 """
 
 from __future__ import annotations

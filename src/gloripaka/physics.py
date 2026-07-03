@@ -1,7 +1,7 @@
 """Transferable-physics baselines: unfit, interpretable, leakage-free.
 
 These are the domain-knowledge features that should transfer across the mAb->VHH gap
-(hydrophobic surface / patch), assembled a priori — NOT fit to any ARRAS label. They
+(hydrophobic surface / patch), assembled a priori - NOT fit to any ARRAS label. They
 are the honest yardstick every learned model must beat to justify its complexity.
 """
 

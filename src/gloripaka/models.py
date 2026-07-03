@@ -123,7 +123,7 @@ def _ridge() -> Regressor:
 
 
 # TabPFN's default model version (v2.5/v3) is license-gated and prompts for a
-# browser token — impossible in a headless run. The original v2 regressor weights,
+# browser token - impossible in a headless run. The original v2 regressor weights,
 # however, are a PUBLIC HuggingFace repo: fetching that checkpoint and passing it as
 # ``model_path`` bypasses the license prompt while staying fully reproducible
 # (public weights + open inference code). This is how we run TabPFN in a closed env.
@@ -158,7 +158,7 @@ def _tabpfn_api() -> Regressor:
 
     NOT reproducible in the strict sense: it egresses features to Prior Labs servers
     and the server-side model version can change. Kept for a strong *cross-check* of
-    the local models — never as the reproducible primary. Requires a token
+    the local models - never as the reproducible primary. Requires a token
     (``gloripaka.secrets``); raises with guidance if absent.
     """
     from gloripaka.secrets import get_tabpfn_token
@@ -185,8 +185,8 @@ _BASE_FACTORIES: dict[str, Callable[[], Regressor]] = {
     "catboost": _catboost,
     "lightgbm": _lightgbm,
     "ridge": _ridge,
-    "tabpfn": _tabpfn,  # local v2 public weights — reproducible, offline
-    "tabpfn_api": _tabpfn_api,  # hosted v3 thinking-mode — cross-check only (data egress)
+    "tabpfn": _tabpfn,  # local v2 public weights - reproducible, offline
+    "tabpfn_api": _tabpfn_api,  # hosted v3 thinking-mode - cross-check only (data egress)
 }
 
 
@@ -238,8 +238,8 @@ class MonotoneCalibrator:
     """Isotonic map from model scores to a target (absolute) scale.
 
     Spearman is invariant to any monotone transform, so calibration only affects
-    Pearson/RMSE. It MUST be fit in-fold on training-scale pairs — never on the
-    validation labels — to stay leak-free. Used to place rank-unit predictions back
+    Pearson/RMSE. It MUST be fit in-fold on training-scale pairs - never on the
+    validation labels - to stay leak-free. Used to place rank-unit predictions back
     onto the ARRAS minute scale for the absolute-Pearson objective.
     """
 

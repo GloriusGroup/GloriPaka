@@ -2,7 +2,7 @@
 
 All plots go through :class:`JACSStyle`, which owns the project colour palette, the
 JACS two-column geometry, and the font/spine/dpi conventions. Nothing else in the
-codebase should call ``plt.rcParams`` or pick colours ad hoc — that is what keeps
+codebase should call ``plt.rcParams`` or pick colours ad hoc - that is what keeps
 Figure 1 and Figure 7 visually comparable.
 
 Palette source: ``modeling_strategyB/visualisation/color_palette.md``.

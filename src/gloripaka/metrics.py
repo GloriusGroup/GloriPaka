@@ -53,7 +53,7 @@ def compute_metrics(y_true: np.ndarray, y_pred: np.ndarray) -> RegressionMetrics
 
     ``r2`` is the coefficient of determination on the raw values; it can be very
     negative when predictions live on a different absolute scale than the target
-    (e.g. rank-unit outputs vs. HIC minutes) — that is expected and informative,
+    (e.g. rank-unit outputs vs. HIC minutes) - that is expected and informative,
     which is precisely why we keep Pearson/Spearman as the primary objective.
     """
     y_true = np.asarray(y_true, dtype=float)
@@ -123,7 +123,7 @@ def residual_outliers(
 
     Uses a rank-based standardization of residuals (robust MAD scaling) so a couple
     of extreme misses don't inflate the scale and hide the rest. Returned records
-    are sorted by absolute z, most extreme first — the shortlist for the journal.
+    are sorted by absolute z, most extreme first - the shortlist for the journal.
     """
     y_true = np.asarray(y_true, dtype=float)
     y_pred = np.asarray(y_pred, dtype=float)

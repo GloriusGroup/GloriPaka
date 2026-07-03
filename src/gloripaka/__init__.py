@@ -1,7 +1,7 @@
 """GloriPaka: sequence-based HIC-retention prediction for VHH nanobodies.
 
-GloriPaka predicts hydrophobic-interaction-chromatography (HIC) retention — a
-surface-hydrophobicity / developability proxy — for VHH single-domain antibodies
+GloriPaka predicts hydrophobic-interaction-chromatography (HIC) retention - a
+surface-hydrophobicity / developability proxy - for VHH single-domain antibodies
 (nanobodies) directly from their amino-acid sequence. Give it a sequence; the
 package handles the rest: 3-D structure prediction (NanoBodyBuilder2), biophysical
 featurization (solvent-exposed hydrophobic surface, patches, aromatic exposure,
@@ -9,7 +9,7 @@ charge/pI), and a leakage-free predictor.
 
 The predictor is a rank-mean ensemble of two complementary estimators:
 
-* an **unfit physics composite** — an equal-weight average of four solvent-exposed
+* an **unfit physics composite** - an equal-weight average of four solvent-exposed
   hydrophobic-surface descriptor ranks, defined a priori with no fitted coefficients,
   which is the honest low-data workhorse; and
 * an **interpretable Ridge** trained on native VHH, dominated by the same exposed

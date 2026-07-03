@@ -138,7 +138,7 @@ class DatasetFactory:
 
         These are disjoint by source from the 34 ARRAS validation VHH, so they can
         train a model that is then evaluated on the held-out 34 with no leakage. Each
-        source sits on its own HIC assay scale (``groups`` = scale_group) → rank-
+        source sits on its own HIC assay scale (``groups`` = scale_group) -> rank-
         normalize per group before pooling (see :func:`gloripaka.models.within_group_quantiles`).
         """
         feats = load_feature_table("native")

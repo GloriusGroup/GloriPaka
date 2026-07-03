@@ -1,0 +1,28 @@
+GloriPaka - third-party asset attributions
+==========================================
+
+This file lists third-party assets bundled in this repository and their
+attribution and licensing terms. The GloriPaka source code itself is released
+under the MIT License (see LICENSE).
+
+Logo
+----
+docs/assets/GloriPaka.png
+Icon made by Freepik from Flaticon (https://www.flaticon.com).
+Used under the Flaticon Free License, which requires attribution to the author.
+
+Fonts
+-----
+assets/fonts/LiberationSans-*.ttf
+Liberation Sans, Copyright (c) Red Hat, Inc.
+Licensed under the SIL Open Font License, Version 1.1.
+Liberation Sans is metric-compatible with Arial and is bundled so figures
+render in an Arial-equivalent typeface regardless of the host system.
+
+Note
+----
+Additional third-party components used at runtime but not vendored here
+(for example NanoBodyBuilder2, FreeSASA, ANARCI, DeepSP, ESM2, and the
+scientific Python stack) retain their own licenses and are installed as
+dependencies. Any assets added later (for example vendored DeepSP model
+weights) will be recorded in this file with their license terms.

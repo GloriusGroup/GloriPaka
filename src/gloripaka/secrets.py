@@ -1,4 +1,4 @@
-"""Secure credential access — the TabPFN API token, never hard-coded.
+"""Secure credential access - the TabPFN API token, never hard-coded.
 
 The token lives OUTSIDE the repo at ``~/.config/priorlabs/tabpfn_token`` (mode 600),
 or in the ``TABPFN_TOKEN`` environment variable. Source code and the git tree never
@@ -44,4 +44,4 @@ def masked_token() -> str:
     tok = get_tabpfn_token()
     if not tok:
         return "<none>"
-    return f"{tok[:3]}…{tok[-3:]} (len {len(tok)})"
+    return f"{tok[:3]}...{tok[-3:]} (len {len(tok)})"

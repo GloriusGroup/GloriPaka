@@ -2,7 +2,7 @@
 
 The 81 challenge VHH contain engineered near-duplicates (point-mutant series of the
 same parent). If two variants of one clone straddle a train/test split, the model
-memorizes the clone rather than learning transferable physics — silent leakage that
+memorizes the clone rather than learning transferable physics - silent leakage that
 inflates CV scores. We defend against it by clustering sequences into **clone
 families** and only ever splitting *between* families (leave-clone-family-out).
 """
@@ -84,7 +84,7 @@ class GroupedCrossValidator:
 
     The model is rebuilt from ``model_factory`` for every fold, fit on the training
     rows only, and used to predict the held-out group. Nothing about the held-out
-    group (labels, target statistics, feature selection) touches the training fit —
+    group (labels, target statistics, feature selection) touches the training fit -
     that discipline lives inside the model, and this runner simply never shows it the
     test fold.
     """
