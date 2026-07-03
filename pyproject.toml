@@ -1,0 +1,109 @@
+[project]
+name = "gloripaka"
+version = "0.1.0"
+description = "Sequence-based hydrophobic-interaction-chromatography (HIC) retention prediction for VHH single-domain antibodies (nanobodies)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "Florian Boser" },
+    { name = "Glorius Group" },
+]
+keywords = [
+    "antibody",
+    "nanobody",
+    "VHH",
+    "single-domain-antibody",
+    "HIC",
+    "hydrophobic-interaction-chromatography",
+    "developability",
+    "bioinformatics",
+    "machine-learning",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "matplotlib>=3.8",
+    "catboost>=1.2",
+    "lightgbm>=4.0",
+]
+
+[project.optional-dependencies]
+# Structure prediction + biophysical featurization (heavier; needed to go from a
+# raw sequence all the way to features). Kept optional so the core model/metrics
+# stay installable in minimal environments.
+featurize = [
+    "freesasa>=2.2",
+    "biopython>=1.83",
+    "anarci",
+]
+# TabPFN is reproducible but license-gated and download-dependent; opt-in backend.
+tabpfn = ["tabpfn>=2.0"]
+# Documentation site (mkdocs-material + API autodoc).
+docs = [
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.25",
+]
+# Developer tooling.
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/GloriusGroup/GloriPaka"
+Repository = "https://github.com/GloriusGroup/GloriPaka"
+Issues = "https://github.com/GloriusGroup/GloriPaka/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gloripaka"]
+
+# --------------------------------------------------------------------------- #
+# Tooling                                                                      #
+# --------------------------------------------------------------------------- #
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "D"]
+# D203/D213 conflict with the Google convention; ignore the alternatives.
+ignore = ["D203", "D213"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]          # tests need not be docstring-complete
+"experiments/*" = ["D"]    # experiment scripts document themselves in-module
+
+[tool.mypy]
+python_version = "3.11"
+packages = ["gloripaka"]
+ignore_missing_imports = true
+warn_unused_ignores = false
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

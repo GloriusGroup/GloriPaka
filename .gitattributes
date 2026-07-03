@@ -1,0 +1,15 @@
+# Normalize line endings.
+* text=auto eol=lf
+
+# Treat these as binary (no diff/merge munging).
+*.png binary
+*.pdf binary
+*.ttf binary
+*.pdb binary
+*.ckpt binary
+*.h5 binary
+
+# Keep GitHub's language stats focused on the package, not vendored/data files.
+data/**            linguist-documentation
+docs/**            linguist-documentation
+*.ipynb            linguist-documentation

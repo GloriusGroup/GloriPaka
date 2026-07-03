@@ -1,0 +1,60 @@
+# --- Python ---------------------------------------------------------------- #
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+wheels/
+.eggs/
+
+# --- Virtual environments -------------------------------------------------- #
+.venv/
+venv/
+.env
+.env.*
+
+# --- uv -------------------------------------------------------------------- #
+# uv.lock IS committed (reproducible env); the cache is not.
+.uv-cache/
+
+# --- Tooling caches -------------------------------------------------------- #
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Docs ------------------------------------------------------------------ #
+site/
+
+# --- Generated outputs (regenerable; keep the repo lean) ------------------- #
+cache/
+figures/*.pdf
+figures/*.png
+
+# --- Large data (hosted on Zenodo; see data/README.md) --------------------- #
+# The heavy, regenerable artifacts live on Zenodo and are downloaded, not
+# committed. A small curated sample (e.g. the 34 known VHH) MAY be committed for
+# examples/tests; those live under data/examples/ and are NOT ignored.
+data/structures/
+data/ensemble_pdbs/
+data/zenodo/
+
+# --- Secrets / API keys / credentials — NEVER commit ----------------------- #
+*.pem
+*.key
+*_token
+*_token.txt
+*.secret
+*apikey*
+*api_key*
+*API_KEY*
+.secrets/
+secrets/
+**/*tabpfn*key*
+**/tabpfn_token*
+
+# --- OS / editor ----------------------------------------------------------- #
+.DS_Store
+.idea/
+.vscode/
