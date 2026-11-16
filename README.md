@@ -184,28 +184,22 @@ data available on a shared assay rather than the modelling method.
 
 - **Florian Boser** - *University of Münster*
 
-  <br>
   [![GitHub](https://img.shields.io/badge/GitHub-FlorianBoser-181717.svg?logo=github)](https://github.com/FlorianBoser)
-  [![ORCID](https://img.shields.io/badge/ORCID-0000--0003--0550--3822-green.svg)](https://orcid.org/0000-0003-0550-3822)
   [![Email](https://img.shields.io/badge/Email-florian.boser%40uni--muenster.de-blue)](mailto:florian.boser@uni-muenster.de)
 
 - **Niklas Dobberstein** - *University of Münster*
 
-  <br>
   [![GitHub](https://img.shields.io/badge/GitHub-NiklasDob-181717.svg?logo=github)](https://github.com/NiklasDob)
   [![Email](https://img.shields.io/badge/Email-niklas.dobberstein%40uni--muenster.de-blue)](mailto:niklas.dobberstein@uni-muenster.de)
 
 - **Maik Niedzella** - *University of Münster*
 
-  <br>
   [![GitHub](https://img.shields.io/badge/GitHub-Jibreel99-181717.svg?logo=github)](https://github.com/Jibreel99)
   [![Email](https://img.shields.io/badge/Email-m__nied07%40uni--muenster.de-blue)](mailto:m_nied07@uni-muenster.de)
 
 - **Jan Christopher Spies** - *University of Münster*
 
-  <br>
   [![GitHub](https://img.shields.io/badge/GitHub-JanCSpies-181717.svg?logo=github)](https://github.com/JanCSpies)
-  [![ORCID](https://img.shields.io/badge/ORCID-0009--0005--9793--6319-green.svg)](https://orcid.org/0009-0005-9793-6319)
   [![Email](https://img.shields.io/badge/Email-jan.spies%40uni--muenster.de-blue)](mailto:jan.spies@uni-muenster.de)
 
 ## Citation
